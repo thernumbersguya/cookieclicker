@@ -50,12 +50,12 @@ M.launch=function()
 					var newShimmer=new Game.shimmer('golden',{noWrath:true});
 					var choices=[];
 					choices.push('frenzy','multiply cookies');
-					if (!Game.hasBuff('Dragonflight')) choices.push('click frenzy');
+					choices.push('click frenzy');
 					if (Math.random()<0.1) choices.push('cookie storm','cookie storm','blab');
 					if (Game.BuildingsOwned>=10 && Math.random()<0.25) choices.push('building special');
 					//if (Math.random()<0.2) choices.push('clot','cursed finger','ruin cookies');
 					if (Math.random()<0.15) choices=['cookie storm drop'];
-					if (Math.random()<0.0001) choices.push('free sugar lump');
+					if (Math.random()<0.003) choices.push('free sugar lump');
 					newShimmer.force=choose(choices);
 					if (newShimmer.force=='cookie storm drop')
 					{
@@ -80,15 +80,15 @@ M.launch=function()
 				desc:loc("All active buffs gain %1% more time (up to %2 more minutes).",[10,5]),
 				failDesc:loc("All active buffs are shortened by %1% (up to %2 minutes shorter).",[20,10]),
 				icon:[23,11],
-				costMin:8,
-				costPercent:0.2,
+				costMin:5,
+				costPercent:0.05,
 				win:function()
 				{
 					var changed=0;
 					for (var i in Game.buffs)
 					{
 						var me=Game.buffs[i];
-						var gain=Math.min(Game.fps*60*5,me.maxTime*0.1);
+						var gain=Math.min(Game.fps*60*6987968508509750,me.maxTime*1);
 						me.maxTime+=gain;
 						me.time+=gain;
 						changed++;
