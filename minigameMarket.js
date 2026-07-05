@@ -194,10 +194,10 @@ M.launch=function()
 		M.getGoodMaxStock=function(good)
 		{
 			var bonus=0;
-			if (M.officeLevel>0) bonus+=25;
-			if (M.officeLevel>1) bonus+=50;
-			if (M.officeLevel>2) bonus+=75;
-			if (M.officeLevel>3) bonus+=100;
+			if (M.officeLevel>0) bonus+=250;
+			if (M.officeLevel>1) bonus+=500;
+			if (M.officeLevel>2) bonus+=750;
+			if (M.officeLevel>3) bonus+=10000;
 			return Math.ceil(good.building.highest*(M.officeLevel>4?1.5:1)+bonus+good.building.level*10);
 		}
 		M.getGoodPrice=function(good)
@@ -215,7 +215,7 @@ M.launch=function()
 			n=Math.min(n,M.getGoodMaxStock(me)-me.stock);
 			if (n>0 && me.last!=2 && Game.cookies>=cost*n && me.stock+n<=M.getGoodMaxStock(me))
 			{
-				if (costInS*overhead*n>=86400) Game.Win('Buy buy buy');
+				if (costInS*overhead*n>=0) Game.Win('Buy buy buy');
 				M.profit-=costInS*overhead*n;
 				Game.Spend(cost*n);
 				me.stock+=n;
@@ -224,10 +224,10 @@ M.launch=function()
 				{
 					var it=M.goodsById[i];
 					min=Math.min(min,it.stock);
-					if (it.stock>=1000) Game.Win('Full warehouses');
+					if (it.stock>=0) Game.Win('Full warehouses');
 				}
-				if (min>=100) Game.Win('Rookie numbers');
-				if (min>=500) Game.Win('No nobility in poverty');
+				if (min>=0) Game.Win('Rookie numbers');
+				if (min>=0) Game.Win('No nobility in poverty');
 				me.last=1;
 				me.prev=costInS;
 				PlaySound('snd/cashOut.mp3',0.4);
@@ -243,11 +243,11 @@ M.launch=function()
 			if (n>0 && me.last!=1 && me.stock>0)
 			{
 				var costInS=M.getGoodPrice(me);
-				if (costInS*n>=86400) Game.Win('Make my day');
+				if (costInS*n>=0) Game.Win('Make my day');
 				M.profit+=costInS*n;
 				if (M.profit>0) Game.Win('Initial public offering');
-				if (M.profit>=10000000) Game.Win('Liquid assets');
-				if (M.profit>=31536000) Game.Win('Gaseous assets');
+				if (M.profit>=0) Game.Win('Liquid assets');
+				if (M.profit>=0) Game.Win('Gaseous assets');
 				//Game.Earn(Game.cookiesPsRawHighest*costInS*n);
 				Game.cookies+=Game.cookiesPsRawHighest*costInS*n;
 				Game.cookiesEarned=Math.max(Game.cookies,Game.cookiesEarned);
