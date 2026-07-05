@@ -826,10 +826,10 @@ M.launch=function()
 							
 							var mult=soilMult;
 							
-							if (stage==1) mult*=0.1;
-							else if (stage==2) mult*=0.25;
-							else if (stage==3) mult*=0.5;
-							else mult*=1;
+							if (stage==1) mult*=2;
+							else if (stage==2) mult*=1.5;
+							else if (stage==3) mult*=1;
+							else mult*=1.6666666666;
 							
 							mult*=M.plotBoost[y][x][1];
 							
@@ -889,9 +889,9 @@ M.launch=function()
 				name:loc("Fertilizer"),
 				icon:1,
 				tick:3,
-				effMult:0.75,
+				effMult:1,
 				weedMult:1.2,
-				req:50,
+				req:0,
 				effsStr:'<div class="gray">&bull; '+loc("tick every %1",'<b>'+Game.sayTime(3*60*Game.fps)+'</b>')+'</div><div class="red">&bull; '+loc("passive plant effects")+' <b>-25%</b></div><div class="red">&bull; '+loc("weed growth")+' <b>+20%</b></div>',
 				q:loc("Soil with a healthy helping of fresh manure. Plants grow faster but are less efficient."),
 			},
@@ -899,9 +899,9 @@ M.launch=function()
 				name:loc("Clay"),
 				icon:2,
 				tick:15,
-				effMult:1.25,
+				effMult:1.5,
 				weedMult:1,
-				req:100,
+				req:0,
 				effsStr:'<div class="gray">&bull; '+loc("tick every %1",'<b>'+Game.sayTime(15*60*Game.fps)+'</b>')+'</div><div class="green">&bull; '+loc("passive plant effects")+' <b>+25%</b></div>',
 				q:loc("Rich soil with very good water retention. Plants grow slower but are more efficient."),
 			},
@@ -909,9 +909,9 @@ M.launch=function()
 				name:loc("Pebbles"),
 				icon:3,
 				tick:5,
-				effMult:0.25,
+				effMult:1,
 				weedMult:0.1,
-				req:200,
+				req:0,
 				effsStr:'<div class="gray">&bull; '+loc("tick every %1",'<b>'+Game.sayTime(5*60*Game.fps)+'</b>')+'</div><div class="red">&bull; '+loc("passive plant effects")+' <b>-75%</b></div><div class="green">&bull; '+loc("<b>%1% chance</b> of collecting seeds automatically when plants expire",35)+'</div><div class="green">&bull; '+loc("weed growth")+' <b>-90%</b></div>',
 				q:loc("Dry soil made of small rocks tightly packed together. Not very conducive to plant health, but whatever falls off your crops will be easy to retrieve.<br>Useful if you're one of those farmers who just want to find new seeds without having to tend their garden too much."),
 			},
@@ -921,7 +921,7 @@ M.launch=function()
 				tick:5,
 				effMult:0.25,
 				weedMult:0.1,
-				req:300,
+				req:0,
 				effsStr:'<div class="gray">&bull; '+loc("tick every %1",'<b>'+Game.sayTime(5*60*Game.fps)+'</b>')+'</div><div class="red">&bull; '+loc("passive plant effects")+' <b>-75%</b></div><div class="green">&bull; '+loc("plants spread and mutate <b>%1 times more</b>",3)+'</div><div class="green">&bull; '+loc("weed growth")+' <b>-90%</b></div>',
 				q:loc("Soil made of bits and pieces of bark and sawdust. Helpful for young sprouts to develop, not so much for mature plants."),
 			},
@@ -1009,8 +1009,8 @@ M.launch=function()
 					{
 						M.computeEffs();
 						PlaySound('snd/freezeGarden.mp3');
-						this.classList.add('on');
-						l('gardenContent').classList.add('gardenFrozen');
+						this.classList.remove('on');
+						l('gardenContent').classList.remove('gardenFrozen');
 						
 						
 						for (var y=0;y<6;y++)
@@ -1506,7 +1506,7 @@ M.launch=function()
 			for (var i in M.plants){M.lockSeed(M.plants[i]);}
 			M.unlockSeed(M.plants['bakerWheat']);
 			
-			Game.gainLumps(10);
+			Game.gainLumps(1500);
 			Game.Notify(loc("Sacrifice!"),loc("You've sacrificed your garden to the sugar hornets, destroying your crops and your knowledge of seeds.<br>In the remains, you find <b>%1 sugar lumps</b>.",10),[29,14],12);
 			
 			M.seedSelected=-1;
@@ -1557,8 +1557,8 @@ M.launch=function()
 					if (M.unlockSeed(me)) Game.Popup('('+me.name+')<br>'+loc("Unlocked %1 seed.",me.name),Game.mouseX,Game.mouseY);
 					M.harvests++;
 					M.harvestsTotal++;
-					if (M.harvestsTotal>=100) Game.Win('Botany enthusiast');
-					if (M.harvestsTotal>=1000) Game.Win('Green, aching thumb');
+					if (M.harvestsTotal>=0) Game.Win('Botany enthusiast');
+					if (M.harvestsTotal>=0) Game.Win('Green, aching thumb');
 				}
 				
 				M.plot[y][x]=[0,0];
@@ -1863,7 +1863,7 @@ M.launch=function()
 				
 				var weedMult=M.soilsById[M.soil].weedMult;
 				
-				var dragonBoost=1+0.05*Game.auraMult('Supreme Intellect');
+				var dragonBoost=1+1*Game.auraMult('Supreme Intellect');
 				
 				var loops=1;
 				if (M.soilsById[M.soil].key=='woodchips') loops=3;
