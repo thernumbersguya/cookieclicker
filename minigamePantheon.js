@@ -109,8 +109,7 @@ M.launch=function()
 				icon:[22,19],
 				activeDescFunc:function()
 				{
-					if (Game.BuildingsOwned%10==0) return loc("Buildings owned:")+' '+Beautify(Game.BuildingsOwned)+'<br>'+loc("Effect is active.");
-					else return loc("Buildings owned:")+' '+Beautify(Game.BuildingsOwned)+'<br>'+loc("Effect is inactive.");
+				 return loc("Buildings owned:")+' '+Beautify(Game.BuildingsOwned)+'<br>'+loc("Effect is always active.");
 				},
 				desc1:'<span class="green">'+loc("Sugar lumps ripen <b>%1</b> sooner.",Game.sayTime(60*60*Game.fps))+'</span>',
 				desc2:'<span class="green">'+loc("Sugar lumps ripen <b>%1</b> sooner.",Game.sayTime(60*40*Game.fps))+'</span>',
@@ -132,7 +131,7 @@ M.launch=function()
 			'Diamond','Ruby','Jade'
 		];
 		
-		M.swaps=3;//swaps left
+		M.swaps=100;//swaps left
 		M.swapT=Date.now();//the last time we swapped
 		
 		M.lastSwapT=0;//frames since last swap
@@ -478,7 +477,7 @@ M.launch=function()
 	}
 	M.reset=function()
 	{
-		M.swaps=3;
+		M.swaps=100;
 		M.swapT=Date.now();
 		for (var i in M.slot) {M.slot[i]=-1;}
 		for (var i in M.gods)
@@ -493,9 +492,9 @@ M.launch=function()
 	M.logic=function()
 	{
 		//run each frame
-		var t=1000*60*60;
-		if (M.swaps==0) t=1000*60*60*16;
-		else if (M.swaps==1) t=1000*60*60*4;
+		var t=1000;
+		if (M.swaps==0) t=1000;
+		else if (M.swaps==1) t=10004;
 		var t2=M.swapT+t-Date.now();
 		if (t2<=0 && M.swaps<3) {M.swaps++;M.swapT=Date.now();}
 		M.lastSwapT++;
@@ -516,9 +515,9 @@ M.launch=function()
 			}
 			l('templeGod'+M.dragging.id).style.transform='translate('+(x)+'px,'+(y)+'px)';
 		}
-		var t=1000*60*60;
-		if (M.swaps==0) t=1000*60*60*16;
-		else if (M.swaps==1) t=1000*60*60*4;
+		var t=1000;
+		if (M.swaps==0) t=1000;
+		else if (M.swaps==1) t=1000;
 		var t2=M.swapT+t-Date.now();
 		if (Game.drawT%5==0) M.swapsL.innerHTML=loc("Worship swaps: %1",'<span class="titleFont" style="color:'+(M.swaps>0?'#fff':'#c00')+';">'+M.swaps+'/'+(3)+'</span>')+((M.swaps<3)?' ('+loc("next in %1",Game.sayTime((t2/1000+1)*Game.fps,-1))+')':'');
 	}
