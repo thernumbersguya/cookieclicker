@@ -15,8 +15,8 @@ M.launch=function()
 				desc:loc("Summon half an hour worth of your CpS, capped at %1% of your cookies owned.",15),
 				failDesc:loc("Trigger a %1-minute clot and lose %1 minutes of CpS.",15),
 				icon:[21,11],
-				costMin:2,
-				costPercent:0.4,
+				costMin:3,
+				costPercent:0,
 				win:function()
 				{
 					var val=Math.max(7,Math.min(Game.cookies*0.15,Game.cookiesPs*60*30));
@@ -26,7 +26,7 @@ M.launch=function()
 				},
 				fail:function()
 				{
-					var buff=Game.gainBuff('clot',60*15,0.5);
+					var buff=Game.gainBuff('clot',60*0,0.5);
 					var val=Math.min(Game.cookies*0.15,Game.cookiesPs*60*15)+13;
 					val=Math.min(Game.cookies,val);
 					Game.Spend(val);
@@ -39,11 +39,11 @@ M.launch=function()
 				desc:loc("Summon a random golden cookie. Each existing golden cookie makes this spell +%1% more likely to backfire.",15),
 				failDesc:loc("Summon an unlucky wrath cookie."),
 				icon:[22,11],
-				costMin:10,
-				costPercent:0.6,
+				costMin:3,
+				costPercent:0,
 				failFunc:function(fail)
 				{
-					return fail+0.15*Game.shimmerTypes['golden'].n;
+					return fail+0*Game.shimmerTypes['golden'].n;
 				},
 				win:function()
 				{
@@ -54,7 +54,7 @@ M.launch=function()
 					if (Math.random()<0.1) choices.push('cookie storm','cookie storm','blab');
 					if (Game.BuildingsOwned>=10 && Math.random()<0.25) choices.push('building special');
 					//if (Math.random()<0.2) choices.push('clot','cursed finger','ruin cookies');
-					if (Math.random()<0.15) choices=['cookie storm drop'];
+					//if (Math.random()<0.15) choices=['cookie storm drop'];
 					if (Math.random()<0.003) choices.push('free sugar lump');
 					newShimmer.force=choose(choices);
 					if (newShimmer.force=='cookie storm drop')
@@ -67,10 +67,10 @@ M.launch=function()
 				{
 					var newShimmer=new Game.shimmer('golden',{wrath:true});
 					var choices=[];
-					choices.push('clot','ruin cookies');
+					//choices.push('clot','ruin cookies');
 					if (Math.random()<0.1) choices.push('cursed finger','blood frenzy');
 					if (Math.random()<0.003) choices.push('free sugar lump');
-					if (Math.random()<0.1) choices=['blab'];
+					//if (Math.random()<0.1) choices=['blab'];
 					newShimmer.force=choose(choices);
 					Game.Popup('<div style="font-size:80%;">'+loc("Backfire!")+'<br>'+loc("Sinister fate!")+'</div>',Game.mouseX,Game.mouseY);
 				},
@@ -80,8 +80,8 @@ M.launch=function()
 				desc:loc("All active buffs gain %1% more time (up to %2 more minutes).",[10,5]),
 				failDesc:loc("All active buffs are shortened by %1% (up to %2 minutes shorter).",[20,10]),
 				icon:[23,11],
-				costMin:5,
-				costPercent:0.05,
+				costMin:3,
+				costPercent:0,
 				win:function()
 				{
 					var changed=0;
@@ -102,7 +102,7 @@ M.launch=function()
 					for (var i in Game.buffs)
 					{
 						var me=Game.buffs[i];
-						var loss=Math.min(Game.fps*60*10,me.time*0.2);
+						var loss=Math.min(Game.fps*60*0,me.time*0);
 						me.time-=loss;
 						me.time=Math.max(me.time,0);
 						changed++;
@@ -116,8 +116,8 @@ M.launch=function()
 				desc:loc("The spell picks a random building you could afford if you had twice your current cookies, and gives it to you for free. The building selected must be under %1, and cannot be your most-built one (unless it is your only one).",400),
 				failDesc:loc("Lose a random building."),
 				icon:[24,11],
-				costMin:20,
-				costPercent:0.75,
+				costMin:3,
+				costPercent:0,
 				win:function()
 				{
 					var buildings=[];
@@ -151,8 +151,8 @@ M.launch=function()
 				desc:loc("Upgrades are %1% cheaper for 1 minute.",2),
 				failDesc:loc("Upgrades are %1% more expensive for an hour.",2)+(EN?'<q>What\'s that spell? Loadsamoney!</q>':''),
 				icon:[25,11],
-				costMin:10,
-				costPercent:0.1,
+				costMin:3,
+				costPercent:0,
 				win:function()
 				{
 					Game.killBuff('Haggler\'s misery');
@@ -171,8 +171,8 @@ M.launch=function()
 				desc:loc("Buildings are %1% cheaper for 1 minute.",2),
 				failDesc:loc("Buildings are %1% more expensive for an hour.",2),
 				icon:[26,11],
-				costMin:10,
-				costPercent:0.2,
+				costMin:3,
+				costPercent:0,
 				win:function()
 				{
 					Game.killBuff('Nasty goblins');
@@ -191,7 +191,7 @@ M.launch=function()
 				desc:loc("Cast a random spell at half the magic cost, with twice the chance of backfiring."),
 				icon:[27,11],
 				costMin:3,
-				costPercent:0.05,
+				costPercent:0,
 				win:function()
 				{
 					var spells=[];
@@ -220,8 +220,8 @@ M.launch=function()
 				desc:loc("Instantly summon a wrinkler if conditions are fulfilled."),
 				failDesc:loc("Pop one of your wrinklers."),
 				icon:[28,11],
-				costMin:20,
-				costPercent:0.1,
+				costMin:3,
+				costPercent:0,
 				win:function()
 				{
 					var out=Game.SpawnWrinkler();
@@ -240,18 +240,18 @@ M.launch=function()
 				desc:loc("Spells backfire %1 times less for the next %2 minutes.",[10,5]),
 				failDesc:loc("Spells backfire %1 times more for the next %2 minutes.",[5,10]),
 				icon:[29,11],
-				costMin:5,
-				costPercent:0.2,
+				costMin:3,
+				costPercent:0,
 				win:function()
 				{
 					Game.killBuff('Magic inept');
-					var buff=Game.gainBuff('magic adept',5*60,10);
+					var buff=Game.gainBuff('magic adept',60*60,10);
 					Game.Popup('<div style="font-size:80%;">'+loc("Ineptitude diminished!")+'</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
 					Game.killBuff('Magic adept');
-					var buff=Game.gainBuff('magic inept',10*60,5);
+					var buff=Game.gainBuff('magic inept',0*0,5);
 					Game.Popup('<div style="font-size:80%;">'+loc("Backfire!")+'<br>'+loc("Ineptitude magnified!")+'</div>',Game.mouseX,Game.mouseY);
 				},
 			},
@@ -290,8 +290,8 @@ M.launch=function()
 		{
 			var failChance=0.15;
 			if (Game.hasBuff('Magic adept')) failChance*=0.1;
-			if (Game.hasBuff('Magic inept')) failChance*=5;
-			failChance*=1+0.1*Game.auraMult('Supreme Intellect');
+			if (Game.hasBuff('Magic inept')) failChance*=0.1;
+			failChance*=1+0*Game.auraMult('Supreme Intellect');
 			if (spell.failFunc) failChance=spell.failFunc(failChance);
 			return failChance;
 		}
@@ -318,9 +318,9 @@ M.launch=function()
 				{
 					M.spellsCast++;
 					M.spellsCastTotal++;
-					if (M.spellsCastTotal>=9) Game.Win('Bibbidi-bobbidi-boo');
-					if (M.spellsCastTotal>=99) Game.Win('I\'m the wiz');
-					if (M.spellsCastTotal>=999) Game.Win('A wizard is you');
+					if (M.spellsCastTotal>=0) Game.Win('Bibbidi-bobbidi-boo');
+					if (M.spellsCastTotal>=0) Game.Win('I\'m the wiz');
+					if (M.spellsCastTotal>=0) Game.Win('A wizard is you');
 				}
 				
 				M.magic-=cost;
@@ -436,7 +436,7 @@ M.launch=function()
 		AddEvent(M.lumpRefill,'click',function(){
 			if (M.magic<M.magicM)
 			{Game.refillLump(1,function(){
-				M.magic+=100;
+				M.magic+=1e300;
 				M.magic=Math.min(M.magic,M.magicM);
 				PlaySound('snd/pop'+Math.floor(Math.random()*3+1)+'.mp3',0.75);
 			});}
