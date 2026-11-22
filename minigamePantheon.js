@@ -13,27 +13,27 @@ M.launch=function()
 			'asceticism':{
 				name:'Holobore, Spirit of Asceticism',
 				icon:[21,18],
-				desc1:'<span class="green">'+loc("+%1% base CpS.",15)+'</span>',
-				desc2:'<span class="green">'+loc("+%1% base CpS.",10)+'</span>',
-				desc3:'<span class="green">'+loc("+%1% base CpS.",5)+'</span>',
+				desc1:'<span class="green">'+loc("+%1% base CpS.",100)+'</span>',
+				desc2:'<span class="green">'+loc("+%1% base CpS.",100)+'</span>',
+				desc3:'<span class="green">'+loc("+%1% base CpS.",100)+'</span>',
 				descAfter:'<span class="red">'+loc("If a golden cookie is clicked, this spirit is unslotted and all worship swaps will be used up.")+'</span>',
 				quote:'An immortal life spent focusing on the inner self, away from the distractions of material wealth.',
 			},
 			'decadence':{
 				name:'Vomitrax, Spirit of Decadence',
 				icon:[22,18],
-				desc1:'<span class="green">'+loc("Golden and wrath cookie effect duration +%1%.",7)+'</span> <span class="red">'+loc("Buildings grant -%1% CpS.",7)+'</span>',
-				desc2:'<span class="green">'+loc("Golden and wrath cookie effect duration +%1%.",5)+'</span> <span class="red">'+loc("Buildings grant -%1% CpS.",5)+'</span>',
-				desc3:'<span class="green">'+loc("Golden and wrath cookie effect duration +%1%.",2)+'</span> <span class="red">'+loc("Buildings grant -%1% CpS.",2)+'</span>',
+				desc1:'<span class="green">'+loc("Golden and wrath cookie effect duration +%1%.",100)+'</span> <span class="red">'+loc("Buildings grant -%1% CpS.",0)+'</span>',
+				desc2:'<span class="green">'+loc("Golden and wrath cookie effect duration +%1%.",100)+'</span> <span class="red">'+loc("Buildings grant -%1% CpS.",0)+'</span>',
+				desc3:'<span class="green">'+loc("Golden and wrath cookie effect duration +%1%.",100)+'</span> <span class="red">'+loc("Buildings grant -%1% CpS.",0)+'</span>',
 				quote:'This sleazy spirit revels in the lust for quick easy gain and contempt for the value of steady work.',
 			},
 			'ruin':{
 				name:'Godzamok, Spirit of Ruin',
 				icon:[23,18],
 				descBefore:'<span class="green">'+loc("Selling buildings triggers a buff boosted by how many buildings were sold.")+'</span>',
-				desc1:'<span class="green">'+loc("Buff boosts clicks by +%1% for every building sold for %2 seconds.",[1,10])+'</span>',
-				desc2:'<span class="green">'+loc("Buff boosts clicks by +%1% for every building sold for %2 seconds.",[0.5,10])+'</span>',
-				desc3:'<span class="green">'+loc("Buff boosts clicks by +%1% for every building sold for %2 seconds.",[0.25,10])+'</span>',
+				desc1:'<span class="green">'+loc("Buff boosts clicks by +%1% for every building sold for %2 seconds.",[100,1e10])+'</span>',
+				desc2:'<span class="green">'+loc("Buff boosts clicks by +%1% for every building sold for %2 seconds.",[100,1e10])+'</span>',
+				desc3:'<span class="green">'+loc("Buff boosts clicks by +%1% for every building sold for %2 seconds.",[100,1e10])+'</span>',
 				quote:'The embodiment of natural disasters. An impenetrable motive drives the devastation caused by this spirit.',
 			},
 			'ages':{
@@ -43,9 +43,9 @@ M.launch=function()
 				{
 					var godLvl=Game.hasGod('ages');
 					var mult=1;
-					if (godLvl==1) mult*=0.15*Math.sin((Date.now()/1000/(60*60*3))*Math.PI*2);
-					else if (godLvl==2) mult*=0.15*Math.sin((Date.now()/1000/(60*60*12))*Math.PI*2);
-					else if (godLvl==3) mult*=0.15*Math.sin((Date.now()/1000/(60*60*24))*Math.PI*2);
+					if (godLvl==1) mult*=0.15;
+					else if (godLvl==2) mult*=0.15;
+					else if (godLvl==3) mult*=0.15;
 					return loc("Current bonus:")+' '+(mult<0?'-':'+')+Beautify(Math.abs(mult)*100,2)+'%';
 				},
 				descBefore:loc("CpS bonus fluctuating between %1 and %2 over time.",['<span class="green">+15%</span>','<span class="red">-15%</span>']),
@@ -58,41 +58,41 @@ M.launch=function()
 				name:'Selebrak, Spirit of Festivities',
 				icon:[25,18],
 				descBefore:'<span class="green">'+loc("Some seasonal effects are boosted.")+'</span>',
-				desc1:'<span class="green">'+loc("Large boost.")+'</span> <span class="red">'+loc("Switching seasons is %1% pricier.",100)+'</span>',
-				desc2:'<span class="green">'+loc("Medium boost.")+'</span> <span class="red">'+loc("Switching seasons is %1% pricier.",50)+'</span>',
-				desc3:'<span class="green">'+loc("Small boost.")+'</span> <span class="red">'+loc("Switching seasons is %1% pricier.",25)+'</span>',
+				desc1:'<span class="green">'+loc("Large boost.")+'</span> <span class="red">'+loc("Switching seasons is %1% pricier.",0)+'</span>',
+				desc2:'<span class="green">'+loc("Medium boost.")+'</span> <span class="red">'+loc("Switching seasons is %1% pricier.",0)+'</span>',
+				desc3:'<span class="green">'+loc("Small boost.")+'</span> <span class="red">'+loc("Switching seasons is %1% pricier.",0)+'</span>',
 				quote:'This is the spirit of merry getaways and regretful Monday mornings.',
 			},
 			'creation':{
 				name:'Dotjeiess, Spirit of Creation',
 				icon:[26,18],
-				desc1:'<span class="green">'+loc("All buildings are <b>%1% cheaper</b>.",7)+'</span> <span class="red">'+loc("Heavenly chips have %1% less effect.",30)+'</span>',
-				desc2:'<span class="green">'+loc("All buildings are <b>%1% cheaper</b>.",5)+'</span> <span class="red">'+loc("Heavenly chips have %1% less effect.",20)+'</span>',
-				desc3:'<span class="green">'+loc("All buildings are <b>%1% cheaper</b>.",2)+'</span> <span class="red">'+loc("Heavenly chips have %1% less effect.",10)+'</span>',
+				desc1:'<span class="green">'+loc("All buildings are <b>%1% cheaper</b>.",50)+'</span> <span class="red">'+loc("Heavenly chips have %1% less effect.",0)+'</span>',
+				desc2:'<span class="green">'+loc("All buildings are <b>%1% cheaper</b>.",50)+'</span> <span class="red">'+loc("Heavenly chips have %1% less effect.",0)+'</span>',
+				desc3:'<span class="green">'+loc("All buildings are <b>%1% cheaper</b>.",50)+'</span> <span class="red">'+loc("Heavenly chips have %1% less effect.",0)+'</span>',
 				quote:'All things that be and ever will be were scripted long ago by this spirit\'s inscrutable tendrils.',
 			},
 			'labor':{
 				name:'Muridal, Spirit of Labor',
 				icon:[27,18],
-				desc1:'<span class="green">'+loc("Clicking is <b>%1%</b> more powerful.",15)+'</span> <span class="red">'+loc("Buildings produce %1% less.",3)+'</span>',
-				desc2:'<span class="green">'+loc("Clicking is <b>%1%</b> more powerful.",10)+'</span> <span class="red">'+loc("Buildings produce %1% less.",2)+'</span>',
-				desc3:'<span class="green">'+loc("Clicking is <b>%1%</b> more powerful.",5)+'</span> <span class="red">'+loc("Buildings produce %1% less.",1)+'</span>',
+				desc1:'<span class="green">'+loc("Clicking is <b>%1%</b> more powerful.",100)+'</span> <span class="red">'+loc("Buildings produce %1% less.",0)+'</span>',
+				desc2:'<span class="green">'+loc("Clicking is <b>%1%</b> more powerful.",100)+'</span> <span class="red">'+loc("Buildings produce %1% less.",0)+'</span>',
+				desc3:'<span class="green">'+loc("Clicking is <b>%1%</b> more powerful.",100)+'</span> <span class="red">'+loc("Buildings produce %1% less.",0)+'</span>',
 				quote:'This spirit enjoys a good cheese after a day of hard work.',
 			},
 			'industry':{
 				name:'Jeremy, Spirit of Industry',
 				icon:[28,18],
-				desc1:'<span class="green">'+loc("Buildings produce %1% more.",10)+'</span> <span class="red">'+loc("Golden and wrath cookies appear %1% less.",10)+'</span>',
-				desc2:'<span class="green">'+loc("Buildings produce %1% more.",6)+'</span> <span class="red">'+loc("Golden and wrath cookies appear %1% less.",6)+'</span>',
-				desc3:'<span class="green">'+loc("Buildings produce %1% more.",3)+'</span> <span class="red">'+loc("Golden and wrath cookies appear %1% less.",3)+'</span>',
+				desc1:'<span class="green">'+loc("Buildings produce %1% more.",100)+'</span> <span class="red">'+loc("Golden and wrath cookies appear %1% less.",0)+'</span>',
+				desc2:'<span class="green">'+loc("Buildings produce %1% more.",100)+'</span> <span class="red">'+loc("Golden and wrath cookies appear %1% less.",0)+'</span>',
+				desc3:'<span class="green">'+loc("Buildings produce %1% more.",100)+'</span> <span class="red">'+loc("Golden and wrath cookies appear %1% less.",0)+'</span>',
 				quote:'While this spirit has many regrets, helping you rule the world through constant industrialization is not one of them.',
 			},
 			'mother':{
 				name:'Mokalsium, Mother Spirit',
 				icon:[29,18],
-				desc1:'<span class="green">'+loc("Milk is <b>%1% more powerful</b>.",10)+'</span> <span class="red">'+loc("Golden and wrath cookies appear %1% less.",15)+'</span>',
-				desc2:'<span class="green">'+loc("Milk is <b>%1% more powerful</b>.",5)+'</span> <span class="red">'+loc("Golden and wrath cookies appear %1% less.",10)+'</span>',
-				desc3:'<span class="green">'+loc("Milk is <b>%1% more powerful</b>.",3)+'</span> <span class="red">'+loc("Golden and wrath cookies appear %1% less.",5)+'</span>',
+				desc1:'<span class="green">'+loc("Milk is <b>%1% more powerful</b>.",100)+'</span> <span class="red">'+loc("Golden and wrath cookies appear %1% less.",0)+'</span>',
+				desc2:'<span class="green">'+loc("Milk is <b>%1% more powerful</b>.",100)+'</span> <span class="red">'+loc("Golden and wrath cookies appear %1% less.",0)+'</span>',
+				desc3:'<span class="green">'+loc("Milk is <b>%1% more powerful</b>.",100)+'</span> <span class="red">'+loc("Golden and wrath cookies appear %1% less.",0)+'</span>',
 				quote:'A caring spirit said to contain itself, inwards infinitely.',
 			},
 			'scorn':{
@@ -433,9 +433,9 @@ M.launch=function()
 			'</div>';
 		};
 		AddEvent(M.lumpRefill,'click',function(){
-			if (M.swaps<3)
+			if (M.swaps<0)
 			{Game.refillLump(1,function(){
-				M.swaps=3;
+				M.swaps=100;
 				M.swapT=Date.now();
 				PlaySound('snd/pop'+Math.floor(Math.random()*3+1)+'.mp3',0.75);
 			});}
