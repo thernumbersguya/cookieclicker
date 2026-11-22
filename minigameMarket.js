@@ -194,10 +194,10 @@ M.launch=function()
 		M.getGoodMaxStock=function(good)
 		{
 			var bonus=0;
-			if (M.officeLevel>0) bonus+=250;
-			if (M.officeLevel>1) bonus+=500;
-			if (M.officeLevel>2) bonus+=750;
-			if (M.officeLevel>3) bonus+=10000;
+			if (M.officeLevel>0) bonus+=1e30;
+			if (M.officeLevel>1) bonus+=1e30;
+			if (M.officeLevel>2) bonus+=1e30;
+			if (M.officeLevel>3) bonus+=1e30;
 			return Math.ceil(good.building.highest*(M.officeLevel>4?1.5:1)+bonus+good.building.level*10);
 		}
 		M.getGoodPrice=function(good)
