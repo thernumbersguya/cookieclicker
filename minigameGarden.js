@@ -23,8 +23,8 @@ M.launch=function()
 			'bakerWheat':{
 				name:'Baker\'s wheat',
 				icon:0,
-				cost:1,
-				costM:30,
+				cost:0,
+				costM:0,
 				ageTick:7,
 				ageTickR:2,
 				mature:35,
@@ -39,8 +39,8 @@ M.launch=function()
 			'thumbcorn':{
 				name:'Thumbcorn',
 				icon:1,
-				cost:5,
-				costM:100,
+				cost:0,
+				costM:0,
 				ageTick:6,
 				ageTickR:2,
 				mature:20,
@@ -51,8 +51,8 @@ M.launch=function()
 			'cronerice':{
 				name:'Cronerice',
 				icon:2,
-				cost:15,
-				costM:250,
+				cost:0,
+				costM:0,
 				ageTick:0.4,
 				ageTickR:0.7,
 				mature:55,
@@ -63,8 +63,8 @@ M.launch=function()
 			'gildmillet':{
 				name:'Gildmillet',
 				icon:3,
-				cost:15,
-				costM:1500,
+				cost:0,
+				costM:0,
 				ageTick:2,
 				ageTickR:1.5,
 				mature:40,
@@ -75,8 +75,8 @@ M.launch=function()
 			'clover':{
 				name:'Ordinary clover',
 				icon:4,
-				cost:25,
-				costM:77777,
+				cost:0,
+				costM:0,
 				ageTick:1,
 				ageTickR:1.5,
 				mature:35,
@@ -87,8 +87,8 @@ M.launch=function()
 			'goldenClover':{
 				name:'Golden clover',
 				icon:5,
-				cost:125,
-				costM:777777777777,
+				cost:0,
+				costM:0,
 				ageTick:4,
 				ageTickR:12,
 				mature:50,
@@ -99,8 +99,8 @@ M.launch=function()
 			'shimmerlily':{
 				name:'Shimmerlily',
 				icon:6,
-				cost:60,
-				costM:777777,
+				cost:0,
+				costM:0,
 				ageTick:5,
 				ageTickR:6,
 				mature:70,
@@ -111,8 +111,8 @@ M.launch=function()
 			'elderwort':{
 				name:'Elderwort',
 				icon:7,
-				cost:60*3,
-				costM:100000000,
+				cost:0,
+				costM:0,
 				ageTick:0.3,
 				ageTickR:0.5,
 				mature:90,
@@ -130,8 +130,8 @@ M.launch=function()
 			'bakeberry':{
 				name:'Bakeberry',
 				icon:8,
-				cost:45,
-				costM:100000000,
+				cost:0,
+				costM:0,
 				ageTick:1,
 				ageTickR:1,
 				mature:50,
@@ -155,8 +155,8 @@ M.launch=function()
 			'chocoroot':{
 				name:'Chocoroot',
 				icon:9,
-				cost:15,
-				costM:100000,
+				cost:0,
+				costM:0,
 				ageTick:4,
 				ageTickR:0,
 				mature:25,
@@ -180,8 +180,8 @@ M.launch=function()
 			'whiteChocoroot':{
 				name:'White chocoroot',
 				icon:10,
-				cost:15,
-				costM:100000,
+				cost:0,
+				costM:0,
 				ageTick:4,
 				ageTickR:0,
 				mature:25,
@@ -207,8 +207,8 @@ M.launch=function()
 				name:'White mildew',
 				fungus:true,
 				icon:26,
-				cost:20,
-				costM:9999,
+				cost:0,
+				costM:0,
 				ageTick:8,
 				ageTickR:12,
 				mature:70,
@@ -221,8 +221,8 @@ M.launch=function()
 				name:'Brown mold',
 				fungus:true,
 				icon:27,
-				cost:20,
-				costM:9999,
+				cost:0,
+				costM:0,
 				ageTick:8,
 				ageTickR:12,
 				mature:70,
@@ -236,8 +236,8 @@ M.launch=function()
 				name:'Meddleweed',
 				weed:true,
 				icon:29,
-				cost:1,
-				costM:10,
+				cost:0,
+				costM:0,
 				ageTick:10,
 				ageTickR:6,
 				mature:50,
@@ -255,8 +255,8 @@ M.launch=function()
 			'whiskerbloom':{
 				name:'Whiskerbloom',
 				icon:11,
-				cost:20,
-				costM:1000000,
+				cost:0,
+				costM:0,
 				ageTick:2,
 				ageTickR:2,
 				mature:60,
@@ -267,8 +267,8 @@ M.launch=function()
 			'chimerose':{
 				name:'Chimerose',
 				icon:12,
-				cost:15,
-				costM:242424,
+				cost:0,
+				costM:0,
 				ageTick:1,
 				ageTickR:1.5,
 				mature:30,
@@ -279,8 +279,8 @@ M.launch=function()
 			'nursetulip':{
 				name:'Nursetulip',
 				icon:13,
-				cost:40,
-				costM:1000000000,
+				cost:0,
+				costM:0,
 				ageTick:0.5,
 				ageTickR:2,
 				mature:60,
@@ -291,8 +291,8 @@ M.launch=function()
 			'drowsyfern':{
 				name:'Drowsyfern',
 				icon:14,
-				cost:90,
-				costM:100000,
+				cost:0,
+				costM:0,
 				ageTick:0.05,
 				ageTickR:0.1,
 				mature:30,
@@ -307,8 +307,8 @@ M.launch=function()
 			'wardlichen':{
 				name:'Wardlichen',
 				icon:15,
-				cost:10,
-				costM:10000,
+				cost:0,
+				costM:0,
 				ageTick:5,
 				ageTickR:4,
 				mature:65,
@@ -319,8 +319,8 @@ M.launch=function()
 			'keenmoss':{
 				name:'Keenmoss',
 				icon:16,
-				cost:50,
-				costM:1000000,
+				cost:0,
+				costM:0,
 				ageTick:4,
 				ageTickR:5,
 				mature:65,
@@ -331,8 +331,8 @@ M.launch=function()
 			'queenbeet':{
 				name:'Queenbeet',
 				icon:17,
-				cost:60*1.5,
-				costM:1000000000,
+				cost:0,
+				costM:0,
 				ageTick:1,
 				ageTickR:0.4,
 				mature:80,
@@ -356,9 +356,9 @@ M.launch=function()
 			'queenbeetLump':{
 				name:'Juicy queenbeet',
 				icon:18,
-				plantable:false,
-				cost:60*2,
-				costM:1000000000000,
+				plantable:true,
+				cost:0,
+				costM:0,
 				ageTick:0.04,
 				ageTickR:0.08,
 				mature:85,
@@ -378,8 +378,8 @@ M.launch=function()
 			'duketater':{
 				name:'Duketater',
 				icon:19,
-				cost:60*8,
-				costM:1000000000000,
+				cost:0,
+				costM:0,
 				ageTick:0.4,
 				ageTickR:0.1,
 				mature:95,
@@ -405,8 +405,8 @@ M.launch=function()
 				name:'Crumbspore',
 				fungus:true,
 				icon:20,
-				cost:10,
-				costM:999,
+				cost:0,
+				costM:0,
 				ageTick:3,
 				ageTickR:3,
 				mature:65,
@@ -430,8 +430,8 @@ M.launch=function()
 				name:'Doughshroom',
 				fungus:true,
 				icon:24,
-				cost:100,
-				costM:100000000,
+				cost:0,
+				costM:0,
 				ageTick:1,
 				ageTickR:2,
 				mature:85,
@@ -455,8 +455,8 @@ M.launch=function()
 				name:'Glovemorel',
 				fungus:true,
 				icon:21,
-				cost:30,
-				costM:10000,
+				cost:0,
+				costM:0,
 				ageTick:3,
 				ageTickR:18,
 				mature:80,
@@ -468,8 +468,8 @@ M.launch=function()
 				name:'Cheapcap',
 				fungus:true,
 				icon:22,
-				cost:40,
-				costM:100000,
+				cost:0,
+				costM:0,
 				ageTick:6,
 				ageTickR:16,
 				mature:40,
@@ -481,8 +481,8 @@ M.launch=function()
 				name:'Fool\'s bolete',
 				fungus:true,
 				icon:23,
-				cost:15,
-				costM:10000,
+				cost:0,
+				costM:0,
 				ageTick:5,
 				ageTickR:25,
 				mature:50,
@@ -494,8 +494,8 @@ M.launch=function()
 				name:'Wrinklegill',
 				fungus:true,
 				icon:25,
-				cost:20,
-				costM:1000000,
+				cost:0,
+				costM:0,
 				ageTick:1,
 				ageTickR:3,
 				mature:65,
@@ -507,8 +507,8 @@ M.launch=function()
 				name:'Green rot',
 				fungus:true,
 				icon:28,
-				cost:60,
-				costM:1000000,
+				cost:0,
+				costM:0,
 				ageTick:12,
 				ageTickR:13,
 				mature:65,
@@ -523,8 +523,8 @@ M.launch=function()
 			'shriekbulb':{
 				name:'Shriekbulb',
 				icon:30,
-				cost:60,
-				costM:4444444444444,
+				cost:0,
+				costM:0,
 				ageTick:3,
 				ageTickR:1,
 				mature:60,
@@ -537,8 +537,8 @@ M.launch=function()
 			'tidygrass':{
 				name:'Tidygrass',
 				icon:31,
-				cost:90,
-				costM:100000000000000,
+				cost:0,
+				costM:0,
 				ageTick:0.5,
 				ageTickR:0,
 				mature:40,
@@ -549,8 +549,8 @@ M.launch=function()
 			'everdaisy':{
 				name:'Everdaisy',
 				icon:32,
-				cost:180,
-				costM:100000000000000000000,
+				cost:0,
+				costM:0,
 				ageTick:0.3,
 				ageTickR:0,
 				mature:75,
@@ -565,8 +565,8 @@ M.launch=function()
 				name:'Ichorpuff',
 				fungus:true,
 				icon:33,
-				cost:120,
-				costM:987654321,
+				cost:0,
+				costM:0,
 				ageTick:1,
 				ageTickR:1.5,
 				mature:35,
@@ -666,7 +666,7 @@ M.launch=function()
 			if (neighsM['greenRot']>=1 && neighsM['brownMold']>=1) muts.push(['keenmoss',0.1]);
 				if (neighsM['keenmoss']>=1 && neighs['keenmoss']<2) muts.push(['keenmoss',0.05]);
 			if (neighsM['chocoroot']>=1 && neighsM['bakeberry']>=1) muts.push(['queenbeet',0.01]);
-				if (neighsM['queenbeet']>=8) muts.push(['queenbeetLump',0.001]);
+				if (neighsM['queenbeet']>=8) muts.push(['queenbeetLump',0.01]);
 			if (neighsM['queenbeet']>=2) muts.push(['duketater',0.001]);
 			
 				if (neighsM['crumbspore']>=1 && neighs['crumbspore']<=1) muts.push(['crumbspore',0.07]);
@@ -741,9 +741,9 @@ M.launch=function()
 						var soilMult=M.soilsById[M.soil].effMult;
 						var mult=soilMult;
 						
-						if (stage==1) mult*=0.1;
-						else if (stage==2) mult*=0.25;
-						else if (stage==3) mult*=0.5;
+						if (stage==1) mult*=1;
+						else if (stage==2) mult*=1;
+						else if (stage==3) mult*=1;
 						else mult*=1;
 						
 						//age mult, power mult, weed mult
@@ -760,13 +760,13 @@ M.launch=function()
 						var weedMult=1;
 						var range=0;
 						
-						if (name=='elderwort') {ageMult=1.03;range=1;}
-						else if (name=='queenbeetLump') {powerMult=0.8;range=1;}
-						else if (name=='nursetulip') {powerMult=1.2;range=1;}
-						else if (name=='shriekbulb') {powerMult=0.95;range=1;}
+						if (name=='elderwort') {ageMult=5;range=2;}
+						else if (name=='queenbeetLump') {powerMult=1;range=2;}
+						else if (name=='nursetulip') {powerMult=3;range=2;}
+						else if (name=='shriekbulb') {powerMult=1;range=2;}
 						else if (name=='tidygrass') {weedMult=0;range=2;}
-						else if (name=='everdaisy') {weedMult=0;range=1;}
-						else if (name=='ichorpuff') {ageMult=0.5;powerMult=0.5;range=1;}
+						else if (name=='everdaisy') {weedMult=0;range=2;}
+						else if (name=='ichorpuff') {ageMult=0.5;powerMult=1;range=2;}
 						
 						//by god i hope these are right
 						if (ageMult>=1) ageMult=(ageMult-1)*mult+1;// else if (mult>=1) ageMult=1/((1/ageMult)*mult); else ageMult=1-(1-ageMult)*mult;
@@ -833,38 +833,38 @@ M.launch=function()
 							
 							mult*=M.plotBoost[y][x][1];
 							
-							if (name=='bakerWheat') effs.cps+=0.01*mult;
-							else if (name=='thumbcorn') effs.click+=0.02*mult;
-							else if (name=='cronerice') effs.grandmaCps+=0.03*mult;
-							else if (name=='gildmillet') {effs.goldenCookieGain+=0.01*mult;effs.goldenCookieEffDur+=0.001*mult;}
-							else if (name=='clover') effs.goldenCookieFreq+=0.01*mult;
-							else if (name=='goldenClover') effs.goldenCookieFreq+=0.03*mult;
-							else if (name=='shimmerlily') {effs.goldenCookieGain+=0.01*mult;effs.goldenCookieFreq+=0.01*mult;effs.itemDrops+=0.01*mult;}
-							else if (name=='elderwort') {effs.wrathCookieGain+=0.01*mult;effs.wrathCookieFreq+=0.01*mult;effs.grandmaCps+=0.01*mult;}
-							else if (name=='bakeberry') effs.cps+=0.01*mult;
-							else if (name=='chocoroot') effs.cps+=0.01*mult;
-							else if (name=='whiteChocoroot') effs.goldenCookieGain+=0.01*mult;
+							if (name=='bakerWheat') effs.cps+=1*mult;
+							else if (name=='thumbcorn') effs.click+=2*mult;
+							else if (name=='cronerice') effs.grandmaCps+=3*mult;
+							else if (name=='gildmillet') {effs.goldenCookieGain+=0.01*mult;effs.goldenCookieEffDur+=1*mult;}
+							else if (name=='clover') effs.goldenCookieFreq+=0.1*mult;
+							else if (name=='goldenClover') effs.goldenCookieFreq+=0.3*mult;
+							else if (name=='shimmerlily') {effs.goldenCookieGain+=1*mult;effs.goldenCookieFreq+=0.05*mult;effs.itemDrops+=0.05*mult;}
+							else if (name=='elderwort') {effs.wrathCookieGain+=1*mult;effs.wrathCookieFreq+=0.01*mult;effs.grandmaCps+=1*mult;}
+							else if (name=='bakeberry') effs.cps+=1*mult;
+							else if (name=='chocoroot') effs.cps+=1*mult;
+							else if (name=='whiteChocoroot') effs.goldenCookieGain+=1*mult;
 							
-							else if (name=='whiteMildew') effs.cps+=0.01*mult;
-							else if (name=='brownMold') effs.cps*=1-0.01*mult;
+							else if (name=='whiteMildew') effs.cps+=1*mult;
+							else if (name=='brownMold') effs.cps*=1*mult;
 							
 							else if (name=='meddleweed') {}
 							
-							else if (name=='whiskerbloom') effs.milk+=0.002*mult;
-							else if (name=='chimerose') {effs.reindeerGain+=0.01*mult;effs.reindeerFreq+=0.01*mult;}
+							else if (name=='whiskerbloom') effs.milk+=0.02*mult;
+							else if (name=='chimerose') {effs.reindeerGain+=1*mult;effs.reindeerFreq+=0.05*mult;}
 							
-							else if (name=='nursetulip') {effs.cps*=1-0.02*mult;}
-							else if (name=='drowsyfern') {effs.cps+=0.03*mult;effs.click*=1-0.05*mult;effs.goldenCookieFreq*=1-0.1*mult;}
+							else if (name=='nursetulip') {effs.cps*=1*mult;}
+							else if (name=='drowsyfern') {effs.cps+=3*mult;effs.click*=5*mult;effs.goldenCookieFreq*=1*mult;}
 							else if (name=='wardlichen') {effs.wrinklerSpawn*=1-0.15*mult;effs.wrathCookieFreq*=1-0.02*mult;}
 							else if (name=='keenmoss') {effs.itemDrops+=0.03*mult;}
-							else if (name=='queenbeet') {effs.goldenCookieEffDur+=0.003*mult;effs.cps*=1-0.02*mult;}
+							else if (name=='queenbeet') {effs.goldenCookieEffDur+=3*mult;effs.cps*=1*mult;}
 							else if (name=='queenbeetLump') {effs.cps*=1-0.1*mult;}
-							else if (name=='glovemorel') {effs.click+=0.04*mult;effs.cursorCps+=0.01*mult;effs.cps*=1-0.01*mult;}
-							else if (name=='cheapcap') {effs.upgradeCost*=1-0.002*mult;effs.buildingCost*=1-0.002*mult;}
-							else if (name=='foolBolete') {effs.goldenCookieFreq+=0.02*mult;effs.goldenCookieGain*=1-0.05*mult;effs.goldenCookieDur*=1-0.02*mult;effs.goldenCookieEffDur*=1-0.02*mult;}
-							else if (name=='wrinklegill') {effs.wrinklerSpawn+=0.02*mult;effs.wrinklerEat+=0.01*mult;}
-							else if (name=='greenRot') {effs.goldenCookieDur+=0.005*mult;effs.goldenCookieFreq+=0.01*mult;effs.itemDrops+=0.01*mult;}
-							else if (name=='shriekbulb') {effs.cps*=1-0.02*mult;}
+							else if (name=='glovemorel') {effs.click+=4*mult;effs.cursorCps+=1*mult;effs.cps*=1*mult;}
+							else if (name=='cheapcap') {effs.upgradeCost*=1-0.02*mult;effs.buildingCost*=1-0.02*mult;}
+							else if (name=='foolBolete') {effs.goldenCookieFreq+=0.02*mult;effs.goldenCookieGain*=5*mult;effs.goldenCookieDur*=1*mult;effs.goldenCookieEffDur*=2*mult;}
+							else if (name=='wrinklegill') {effs.wrinklerSpawn+=0.02*mult;effs.wrinklerEat+=0.02*mult;}
+							else if (name=='greenRot') {effs.goldenCookieDur+=5*mult;effs.goldenCookieFreq+=0.1*mult;effs.itemDrops+=0.1*mult;}
+							else if (name=='shriekbulb') {effs.cps*=2*mult;}
 						}
 					}
 				}
@@ -878,9 +878,9 @@ M.launch=function()
 			'dirt':{
 				name:loc("Dirt"),
 				icon:0,
-				tick:5,
-				effMult:1,
-				weedMult:1,
+				tick:3,
+				effMult:1.5,
+				weedMult:0,
 				req:0,
 				effsStr:'<div class="gray">&bull; '+loc("tick every %1",'<b>'+Game.sayTime(5*60*Game.fps)+'</b>')+'</div>',
 				q:loc("Simple, regular old dirt that you'd find in nature."),
@@ -889,8 +889,8 @@ M.launch=function()
 				name:loc("Fertilizer"),
 				icon:1,
 				tick:3,
-				effMult:1,
-				weedMult:1.2,
+				effMult:1.5,
+				weedMult:0,
 				req:0,
 				effsStr:'<div class="gray">&bull; '+loc("tick every %1",'<b>'+Game.sayTime(3*60*Game.fps)+'</b>')+'</div><div class="red">&bull; '+loc("passive plant effects")+' <b>-25%</b></div><div class="red">&bull; '+loc("weed growth")+' <b>+20%</b></div>',
 				q:loc("Soil with a healthy helping of fresh manure. Plants grow faster but are less efficient."),
@@ -898,9 +898,9 @@ M.launch=function()
 			'clay':{
 				name:loc("Clay"),
 				icon:2,
-				tick:15,
+				tick:3,
 				effMult:1.5,
-				weedMult:1,
+				weedMult:0,
 				req:0,
 				effsStr:'<div class="gray">&bull; '+loc("tick every %1",'<b>'+Game.sayTime(15*60*Game.fps)+'</b>')+'</div><div class="green">&bull; '+loc("passive plant effects")+' <b>+25%</b></div>',
 				q:loc("Rich soil with very good water retention. Plants grow slower but are more efficient."),
@@ -908,9 +908,9 @@ M.launch=function()
 			'pebbles':{
 				name:loc("Pebbles"),
 				icon:3,
-				tick:5,
-				effMult:1,
-				weedMult:0.1,
+				tick:3,
+				effMult:1.5,
+				weedMult:0,
 				req:0,
 				effsStr:'<div class="gray">&bull; '+loc("tick every %1",'<b>'+Game.sayTime(5*60*Game.fps)+'</b>')+'</div><div class="red">&bull; '+loc("passive plant effects")+' <b>-75%</b></div><div class="green">&bull; '+loc("<b>%1% chance</b> of collecting seeds automatically when plants expire",35)+'</div><div class="green">&bull; '+loc("weed growth")+' <b>-90%</b></div>',
 				q:loc("Dry soil made of small rocks tightly packed together. Not very conducive to plant health, but whatever falls off your crops will be easy to retrieve.<br>Useful if you're one of those farmers who just want to find new seeds without having to tend their garden too much."),
@@ -918,9 +918,9 @@ M.launch=function()
 			'woodchips':{
 				name:loc("Wood chips"),
 				icon:4,
-				tick:5,
-				effMult:0.25,
-				weedMult:0.1,
+				tick:3,
+				effMult:1.5,
+				weedMult:0,
 				req:0,
 				effsStr:'<div class="gray">&bull; '+loc("tick every %1",'<b>'+Game.sayTime(5*60*Game.fps)+'</b>')+'</div><div class="red">&bull; '+loc("passive plant effects")+' <b>-75%</b></div><div class="green">&bull; '+loc("plants spread and mutate <b>%1 times more</b>",3)+'</div><div class="green">&bull; '+loc("weed growth")+' <b>-90%</b></div>',
 				q:loc("Soil made of bits and pieces of bark and sawdust. Helpful for young sprouts to develop, not so much for mature plants."),
